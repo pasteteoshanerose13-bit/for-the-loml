@@ -5,766 +5,224 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#a92f43">
-<title>berry much in love with you, aivy 🍓</title>
-
+<title>berry much in love with you ♡ 🍓</title>
 <style>
-:root {
-  --red: #b83245;
-  --deep-red: #842b39;
-  --green: #456b45;
-  --light-green: #e3ead7;
-  --cream: #fff8e9;
-  --pink: #f5d9d6;
-  --ink: #553a32;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 10% 20%, #f3d7cd 0, transparent 35%),
-    radial-gradient(ellipse at 90% 85%, #dce7d1 0, transparent 32%),
-    var(--cream);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  overflow-x: hidden;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  font-family: inherit;
-}
-
-.leaf-decoration {
-  position: fixed;
-  z-index: 0;
-  font-size: 42px;
-  opacity: .24;
-  pointer-events: none;
-}
-
-.leaf-one {
-  top: 12px;
-  left: 8px;
-  transform: rotate(-25deg);
-}
-
-.leaf-two {
-  bottom: 12px;
-  right: 8px;
-  transform: rotate(25deg);
-}
-
-.wrapper {
-  width: min(100% - 28px, 510px);
-  margin: 0 auto;
-  padding: 35px 0 50px;
-  position: relative;
-  z-index: 1;
-}
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-  animation: reveal .45s ease both;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.brand {
-  text-align: center;
-  color: var(--green);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 22px;
-}
-
-h1 {
-  font-size: clamp(34px, 9vw, 48px);
-  line-height: 1.1;
-  font-weight: normal;
-  margin: 12px 0 16px;
-}
-
-h2 {
-  font-size: 27px;
-  line-height: 1.3;
-  font-weight: normal;
-  color: var(--red);
-  margin-top: 0;
-}
-
-h3 {
-  font-weight: normal;
-}
-
-p {
-  line-height: 1.85;
-}
-
-.center {
-  text-align: center;
-}
-
-.strawberry {
-  display: inline-block;
-  font-size: 74px;
-  filter: drop-shadow(0 6px 5px #7e30251b);
-  animation: berry 2.5s ease-in-out infinite;
-}
-
-@keyframes berry {
-  0%, 100% { transform: rotate(-5deg) translateY(0); }
-  50% { transform: rotate(5deg) translateY(-5px); }
-}
-
-.paper {
-  background: rgba(255, 250, 239, .94);
-  border: 1px solid #e4c8a9;
-  border-radius: 5px 17px 5px 17px;
-  padding: 25px 22px;
-  margin: 22px 0;
-  box-shadow: 4px 6px 0 #8b533012;
-  position: relative;
-}
-
-.paper::before {
-  content: "✿";
-  position: absolute;
-  right: 12px;
-  top: 8px;
-  color: #8aa078;
-  opacity: .7;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 10px;
-  color: var(--green);
-}
-
-.primary {
-  display: inline-block;
-  width: 100%;
-  background: var(--red);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  border-radius: 7px 18px 7px 18px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: transform .2s, background .2s;
-}
-
-.primary:hover {
-  background: var(--deep-red);
-  transform: translateY(-2px);
-}
-
-.secondary {
-  display: inline-block;
-  background: transparent;
-  border: 1px solid var(--green);
-  color: var(--green);
-  padding: 12px 18px;
-  border-radius: 7px 15px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.small {
-  font-size: 12px;
-  opacity: .75;
-}
-
-.divider {
-  text-align: center;
-  color: var(--green);
-  letter-spacing: 7px;
-  margin: 24px 0;
-}
-
-.progress-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--green);
-}
-
-.progress {
-  height: 6px;
-  border-radius: 10px;
-  background: #e7e0cf;
-  margin: 12px 0 22px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--green);
-  transition: width .3s;
-}
-
-.answer {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: #fffdf5;
-  color: var(--ink);
-  border: 1px solid #d8cbb3;
-  border-radius: 8px;
-  padding: 14px;
-  margin: 10px 0;
-  cursor: pointer;
-  line-height: 1.5;
-  font-size: 14px;
-  transition: .2s;
-}
-
-.answer:hover {
-  border-color: var(--red);
-  background: #fff0ed;
-}
-
-.answer:focus-visible,
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid #6b8b56;
-  outline-offset: 3px;
-}
-
-.feedback {
-  color: var(--green);
-  min-height: 25px;
-  font-size: 13px;
-}
-
-.letter-text {
-  white-space: pre-line;
-  line-height: 2;
-  font-size: 15px;
-}
-
-.signature {
-  color: var(--red);
-  font-style: italic;
-  text-align: right;
-}
-
-.secret-seal {
-  display: inline-block;
-  border: 1px dashed var(--red);
-  color: var(--red);
-  padding: 10px 16px;
-  border-radius: 50%;
-  transform: rotate(-7deg);
-  margin: 10px 0 20px;
-  font-size: 13px;
-}
-
-.song {
-  background: #fffaf0;
-  border: 1px solid #dfd0b7;
-  border-left: 4px solid var(--green);
-  padding: 18px;
-  margin: 15px 0;
-  border-radius: 4px 12px 4px 12px;
-  text-align: left;
-}
-
-.song-number {
-  color: var(--green);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-.song h3 {
-  color: var(--red);
-  font-size: 21px;
-  margin: 8px 0;
-}
-
-.song p {
-  font-size: 14px;
-}
-
-.song a {
-  color: var(--green);
-  font-size: 13px;
-  text-underline-offset: 3px;
-}
-
-.footer {
-  text-align: center;
-  color: var(--green);
-  font-size: 11px;
-  margin-top: 35px;
-  line-height: 2;
-}
-
-.back {
-  display: block;
-  margin: 16px auto 0;
-  background: none;
-  border: none;
-  color: var(--green);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  cursor: pointer;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
+:root{--red:#b83245;--deep-red:#842b39;--green:#456b45;--cream:#fff8e9;--ink:#553a32}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 10% 20%,#f3d7cd 0,transparent 35%),radial-gradient(ellipse at 90% 85%,#dce7d1 0,transparent 32%),var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;cursor:pointer}
+.wrapper{width:min(100% - 28px,510px);margin:auto;padding:35px 0 50px;position:relative;z-index:1}
+.page{display:none}
+.page.active{display:block;animation:reveal .45s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.brand{text-align:center;color:var(--green);font-size:10px;text-transform:uppercase;letter-spacing:3px;margin-bottom:22px}
+h1{font-size:clamp(34px,9vw,48px);line-height:1.1;font-weight:normal;margin:12px 0 16px}
+h2{font-size:27px;line-height:1.3;font-weight:normal;color:var(--red);margin-top:0}
+h3{font-weight:normal}
+p{line-height:1.85}
+.center{text-align:center}
+.strawberry{display:inline-block;font-size:74px;animation:berry 2.5s ease-in-out infinite}
+@keyframes berry{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-5px)}}
+.paper{background:rgba(255,250,239,.94);border:1px solid #e4c8a9;border-radius:5px 17px;padding:25px 22px;margin:22px 0;box-shadow:4px 6px 0 #8b533012;position:relative}
+.paper:before{content:"✿";position:absolute;right:12px;top:8px;color:#8aa078;opacity:.7}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:10px;color:var(--green)}
+.primary{display:block;width:100%;background:var(--red);color:white;border:0;padding:15px 20px;border-radius:7px 18px;font-size:15px;transition:.2s}
+.primary:hover{background:var(--deep-red);transform:translateY(-2px)}
+.small{font-size:12px;opacity:.75}
+.divider{text-align:center;color:var(--green);letter-spacing:7px;margin:24px 0}
+.progress-row{display:flex;justify-content:space-between;font-size:12px;color:var(--green)}
+.progress{height:6px;border-radius:10px;background:#e7e0cf;margin:12px 0 22px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:var(--green);transition:width .3s}
+.answer{display:block;width:100%;text-align:left;background:#fffdf5;color:var(--ink);border:1px solid #d8cbb3;border-radius:8px;padding:14px;margin:10px 0;line-height:1.5;font-size:14px}
+.feedback{color:var(--green);min-height:25px;font-size:13px}
+.letter-text{white-space:pre-line;line-height:2;font-size:15px}
+.signature{color:var(--red);font-style:italic;text-align:right}
+.secret-seal{display:inline-block;border:1px dashed var(--red);color:var(--red);padding:10px 16px;border-radius:50%;transform:rotate(-7deg);margin:10px 0 20px;font-size:13px}
+.song{background:#fffaf0;border:1px solid #dfd0b7;border-left:4px solid var(--green);padding:18px;margin:15px 0;border-radius:4px 12px;text-align:left}
+.song-number{color:var(--green);font-size:10px;letter-spacing:2px}
+.song h3{color:var(--red);font-size:21px;margin:8px 0}
+.song p{font-size:14px}
+.song a{color:var(--green);font-size:13px;text-underline-offset:3px}
+.footer{text-align:center;color:var(--green);font-size:11px;margin-top:35px;line-height:2}
+.back{display:block;margin:16px auto 0;background:none;border:0;color:var(--green);text-decoration:underline;text-underline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
-
 <body>
-<div class="leaf-decoration leaf-one">🍃</div>
-<div class="leaf-decoration leaf-two">🍃</div>
-
 <main class="wrapper">
 
-  <!-- PAGE 1: THE BEGINNING -->
-  <section class="page active" id="home">
-    <div class="brand">a little berry special place</div>
+<section class="page active" id="home">
+<div class="brand">a little berry special place</div>
+<div class="center">
+<span class="strawberry">🍓</span>
+<p class="eyebrow">made for one girl only</p>
+<h1>hi, mahal. ♡</h1>
+<p>i made a little corner of the internet<br>that belongs to you and me.</p>
+<p>but before you read what i've been keeping in my heart, there's a tiny game waiting for you.</p>
+</div>
+<div class="paper center">
+<p>four little questions, one little surprise.</p>
+<p class="small">no wrong answers here, pretty girl.</p>
+<button class="primary" onclick="startGame()">enter our little world ♡</button>
+</div>
+<div class="footer">grown with love, one little strawberry at a time. 🍃</div>
+</section>
 
-    <div class="center">
-      <span class="strawberry">🍓</span>
-      <p class="eyebrow">made for one girl only</p>
-      <h1>hi, aivy. ♡</h1>
-      <p>
-        i made a little corner of the internet<br>
-        that belongs to you and me.
-      </p>
-      <p>
-        but before you read what i've been keeping
-        in my heart, there's a tiny game waiting
-        for you.
-      </p>
-    </div>
+<section class="page" id="game">
+<div class="brand">the strawberry fields</div>
+<div class="center"><h1>a little game for you</h1><p>pick the answer that feels most like us.</p></div>
+<div class="paper">
+<div class="progress-row"><span id="questionCount">question 1 of 4</span><span>🍓 <span id="berryCount">0</span>/4</span></div>
+<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+<h2 id="questionTitle"></h2>
+<p id="questionDescription" class="small"></p>
+<div id="answers"></div>
+<p class="feedback" id="feedback" aria-live="polite"></p>
+</div>
+<button class="primary" id="nextQuestion" onclick="nextStep()" disabled>next little question →</button>
+<button class="back" onclick="showPage('home')">back to the beginning</button>
+</section>
 
-    <div class="paper center">
-      <p>four little questions, one little surprise.</p>
-      <p class="small">no wrong answers here, pretty girl.</p>
-      <button class="primary" onclick="startGame()">
-        enter our little world ♡
-      </button>
-    </div>
+<section class="page" id="secret">
+<div class="brand">a little secret, just for you</div>
+<div class="center">
+<span class="strawberry">🍓</span>
+<h1>you found my secret!</h1>
+<div class="secret-seal">reserved for mahal ♡</div>
+</div>
+<div class="paper center">
+<p id="secretMessage" class="letter-text"></p>
+<div class="divider">✿ ♡ ✿</div>
+<p>there's one more thing i made for you. something i've wanted to say in my own words.</p>
+<button class="primary" onclick="showPage('letter')">read your letter 💌</button>
+</div>
+</section>
 
-    <div class="footer">
-      grown with love, one little strawberry at a time. 🍃
-    </div>
-  </section>
+<section class="page" id="letter">
+<div class="brand">pressed flowers & unsent feelings</div>
+<div class="center"><p class="eyebrow">page one of my heart</p><h1>to my mahal. ♡</h1></div>
+<article class="paper">
+<div class="letter-text" id="letterText">my dearest mahal,
 
-  <!-- PAGE 2: THE GAME -->
-  <section class="page" id="game">
-    <div class="brand">the strawberry fields</div>
+i wish you could see yourself through my eyes, even just for a moment. maybe then you'd understand why i keep telling you how beautiful you are, and why i'll keep reminding you whenever you forget. i'm not saying these things just to make you smile. i mean them, even on the days when you struggle to believe them yourself. you don't have to look or act a certain way to deserve love. you are already someone worth loving, exactly as you are.
 
-    <div class="center">
-      <h1>a little game for you</h1>
-      <p>pick the answer that feels most like us.</p>
-    </div>
+i hope you know that you don't have to be okay all the time with me. you can tell me when you're tired, when something hurts, or when you don't know how to explain what you're feeling. you don't have to hide the difficult parts of yourself just to make things easier for me. i want to listen and understand you, not make you feel like your feelings are too much. you're not a burden for needing reassurance, and you don't have to earn my gentleness by being perfect.
 
-    <div class="paper">
-      <div class="progress-row">
-        <span id="questionCount">question 1 of 4</span>
-        <span>🍓 <span id="berryCount">0</span>/4</span>
-      </div>
+i know that love isn't only about the sweet words we say when everything is okay. it's also about how we treat each other when things get difficult. i want us to keep learning how to listen, how to be honest, how to admit when we've made mistakes, and how to fix things without forgetting that we're on the same side. i can't promise that i'll always know the right thing to say, but i can promise that i'll keep trying to understand you and express myself more clearly, too.
 
-      <div class="progress">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
+sometimes, i wish loving you could be simple in every way. i wish i could hold your hand without worrying about who's looking, and show you affection without having to think twice. if there are moments when i can't express my love as freely as i want to, please know that it isn't because i'm ashamed of you. i'm not. you mean so much to me, even when the world around us makes things feel complicated. i hope that one day, we can enjoy more of those little moments without fear.
 
-      <h2 id="questionTitle">what kind of moment is your favorite?</h2>
-      <p id="questionDescription" class="small">
-        take your time, my love.
-      </p>
+i love the little things that make you who you are, the details you might not even notice about yourself, and the memories we've made together. i want to keep discovering more about you, not because i expect you to stay the same forever, but because i want to grow alongside you. i want to celebrate your small wins, listen to your stories, and be someone you can talk to honestly. and i hope we can give each other the same patience we both need as we learn and grow.
 
-      <div id="answers"></div>
-      <p class="feedback" id="feedback" aria-live="polite"></p>
-    </div>
+if you ever start wondering whether you're enough, please come back to this letter. you don't have to compete with anyone to deserve your place in my heart. you don't have to become someone else to be easier to love. i chose you because you're you, and i want the love we share to feel safe, honest, and gentle for both of us.
 
-    <button class="primary" id="nextQuestion"
-      onclick="nextStep()" disabled>
-      next little question →
-    </button>
+thank you for being part of my life, mahal. thank you for the memories we already have and for the little moments we haven't experienced yet. i can't predict everything about the future, but i know i want to keep meeting it with honesty, care, and effort. i hope this little strawberry world reminds you that there is someone who thinks of you with so much tenderness and is grateful to love you.
 
-    <button class="back" onclick="goHome()">
-      back to the beginning
-    </button>
-  </section>
+you are loved on your happy days, your quiet days, your insecure days, and the days when you don't know what you need. you don't have to be perfect to be precious to me. i hope i can keep showing you that through more than words, one little moment at a time.
 
-  <!-- PAGE 3: SECRET ENDING -->
-  <section class="page" id="secret">
-    <div class="brand">a little secret, just for you</div>
+always remember that i'm grateful i get to love you. ♡</div>
+<div class="divider">🍃 ✿ 🍃</div>
+<p class="signature">shane ♡</p>
+</article>
+<button class="primary" onclick="showPage('playlist')">the songs i dedicate to you ♫</button>
+<button class="back" onclick="showPage('secret')">← back to your surprise</button>
+</section>
 
-    <div class="center">
-      <span class="strawberry">🍓</span>
-      <h1 id="secretTitle">you found my secret!</h1>
-      <div class="secret-seal">reserved for aivy ♡</div>
-    </div>
+<section class="page" id="playlist">
+<div class="brand">our little soundtrack</div>
+<div class="center"><span class="strawberry">🍓</span><h1>songs that sound like you</h1><p>some feelings are easier to share through music. these are the songs i want you to hear.</p></div>
+<div class="paper"><p class="eyebrow">a note before you listen</p><p>these aren't just songs on a list. they're little reminders of you, of us, and of the things i sometimes struggle to say.</p></div>
 
-    <div class="paper center">
-      <p id="secretMessage" class="letter-text"></p>
-      <div class="divider">✿ ♡ ✿</div>
-      <p>
-        there's one more thing i made for you.
-        something i've wanted to say in my own words.
-      </p>
-      <button class="primary" onclick="showPage('letter')">
-        read your letter 💌
-      </button>
-    </div>
-  </section>
+<article class="song">
+<div class="song-number">TRACK 01 · FOR MY FAVORITE GIRL</div>
+<h3>for the girl who doesn't see what i see ♡</h3>
+<p>i wish you could see yourself through my eyes, mahal. maybe then you'd understand why i think you're so beautiful, even on the days when your insecurities make it hard for you to believe me. i hope this song reminds you that you're precious to me and that you never have to change who you are to be worthy of love.</p>
+<a href="https://open.spotify.com/track/5pek4R29HVwMaWgzpV64f3?si=Un1uf1KvS4SVIg0I5RWVhg&utm_source=copy-link" target="_blank" rel="noopener noreferrer">listen on spotify ↗</a>
+</article>
 
-  <!-- PAGE 4: THE LETTER -->
-  <section class="page" id="letter">
-    <div class="brand">pressed flowers & unsent feelings</div>
+<article class="song">
+<div class="song-number">TRACK 02 · A PIECE OF US</div>
+<h3>for all the little things ♡</h3>
+<p>this one is for the little details that make you, you. i want you to feel listened to, appreciated, and safe enough to tell me what's really on your mind. you don't have to pretend you're okay just to protect me from your feelings. i want us to keep choosing honesty, patience, and kindness, even when a conversation isn't easy.</p>
+<a href="https://open.spotify.com/track/1Qha6JOhv7VKIHzvn8I36I?si=YfzKTrpIQpO-qMe_4mRPkA&utm_source=copy-link" target="_blank" rel="noopener noreferrer">listen on spotify ↗</a>
+</article>
 
-    <div class="center">
-      <p class="eyebrow">page one of my heart</p>
-      <h1>to my aivy. ♡</h1>
-    </div>
+<article class="song">
+<div class="song-number">TRACK 03 · ALWAYS YOURS</div>
+<h3>for the love i can't always show freely ♡</h3>
+<p>sometimes i wish i could hold your hand without worrying about who's looking, and love you openly without having to think twice. if i can't always show my love as freely as i'd like, it doesn't mean i'm ashamed of you. i hope this song reminds you that my feelings are real, even when our circumstances make things complicated.</p>
+<a href="https://open.spotify.com/track/3EriD11HEMpLt5q8QO2tQZ?si=wzbAamdgS_ig-BjDzZ3tAA" target="_blank" rel="noopener noreferrer">listen on spotify ↗</a>
+</article>
 
-    <article class="paper">
-      <!-- REPLACE THIS SAMPLE WITH YOUR OWN LETTER -->
-      <div class="letter-text" id="letterText">my dearest aivy,
-
-i wish you could see how much of my everyday life reminds me of you. sometimes, it's the smallest things: a song playing at the right moment, a little detail that makes me smile, or something i want to tell you before i even think of telling anyone else.
-
-i made this because i wanted you to have something you could return to. not because a website could ever hold everything i feel, but because i wanted to make something that was ours.
-
-i hope you remember that you don't have to earn every bit of love you receive. you can have days when you're tired, days when you don't know what to say, and days when you need a little extra gentleness. you are still worthy of kindness on every one of them.
-
-i love learning the little things about you. i love the memories we already have, and i look forward to the ordinary moments we haven't lived yet. i want to keep showing up with honesty, patience, and a love that makes room for both of us to grow.
-
-if you ever wonder why i made this, it's simple: i wanted to give you a little reminder that you are important to me, in a way you can keep.
-
-thank you for being a part of my life, aivy. this little strawberry world is only a tiny piece of the love i wanted to put into words.
-
-always remember that there is a girl out here who is grateful she gets to love you. ♡</div>
-
-      <div class="divider">🍃 ✿ 🍃</div>
-
-      <p class="signature">
-        with all my heart,<br>
-        your girl ♡
-      </p>
-    </article>
-
-    <button class="primary" onclick="showPage('playlist')">
-      the songs i dedicate to you ♫
-    </button>
-
-    <button class="back" onclick="showPage('secret')">
-      ← back to your surprise
-    </button>
-  </section>
-
-  <!-- PAGE 5: DEDICATED SONGS -->
-  <section class="page" id="playlist">
-    <div class="brand">our little soundtrack</div>
-
-    <div class="center">
-      <span class="strawberry">🍓</span>
-      <h1>songs that sound like you</h1>
-      <p>
-        some feelings are easier to share through music.
-        these are the songs i want you to hear.
-      </p>
-    </div>
-
-    <div class="paper">
-      <p class="eyebrow">a note before you listen</p>
-      <p>
-        these aren't just songs on a list.
-        they're little reminders of you, of us,
-        and of the things i sometimes struggle to say.
-      </p>
-    </div>
-
-    <!-- SONG 1: REPLACE TITLE, NOTE, AND LINK -->
-    <article class="song">
-      <div class="song-number">TRACK 01 · FOR MY FAVORITE GIRL</div>
-      <h3>your first song title ♡</h3>
-      <p>
-        i chose this one because it reminds me of you.
-        replace this with the real reason this song
-        belongs to aivy.
-      </p>
-      <a href="https://open.spotify.com/search/"
-         target="_blank" rel="noopener noreferrer">
-        find this song on spotify ↗
-      </a>
-    </article>
-
-    <!-- SONG 2 -->
-    <article class="song">
-      <div class="song-number">TRACK 02 · A PIECE OF US</div>
-      <h3>your second song title ♡</h3>
-      <p>
-        maybe this song reminds me of a memory we share,
-        or maybe it says something i haven't figured
-        out how to put into my own words yet.
-      </p>
-      <a href="https://open.spotify.com/search/"
-         target="_blank" rel="noopener noreferrer">
-        find this song on spotify ↗
-      </a>
-    </article>
-
-    <!-- SONG 3 -->
-    <article class="song">
-      <div class="song-number">TRACK 03 · ALWAYS YOURS</div>
-      <h3>your third song title ♡</h3>
-      <p>
-        this one's for the days when i want you to
-        remember how much the little things about you
-        mean to me.
-      </p>
-      <a href="https://open.spotify.com/search/"
-         target="_blank" rel="noopener noreferrer">
-        find this song on spotify ↗
-      </a>
-    </article>
-
-    <div class="paper center">
-      <h2>that's our little playlist. ♡</h2>
-      <p>
-        if these songs ever come on when we're apart,
-        i hope they remind you of this little world
-        i made just for you.
-      </p>
-      <button class="primary" onclick="showPage('home')">
-        visit our little world again 🍃
-      </button>
-    </div>
-
-    <div class="footer">
-      three little songs, a thousand little feelings.<br>
-      made especially for aivy. ♡
-    </div>
-  </section>
-
+<div class="paper center"><h2>that's our little playlist. ♡</h2><p>if these songs ever come on when we're apart, i hope they remind you of this little world i made just for you.</p><button class="primary" onclick="showPage('home')">visit our little world again 🍃</button></div>
+<div class="footer">three little songs, a thousand little feelings.<br>made especially for mahal. ♡</div>
+</section>
 </main>
 
 <script>
-const questions = [
-  {
-    title: "what kind of moment feels special to you?",
-    description: "there's no wrong answer, pretty girl.",
-    answers: [
-      {
-        text: "the quiet moments when it's just us.",
-        message: "sometimes the simplest moments mean the most. ♡"
-      },
-      {
-        text: "laughing together over the silliest things.",
-        message: "a little laughter can turn an ordinary day into a memory. 🍓"
-      },
-      {
-        text: "the moments when we understand each other.",
-        message: "being understood is such a beautiful kind of closeness. 🍃"
-      }
-    ]
-  },
-  {
-    title: "if our love were a little garden, what would it need?",
-    description: "choose what you think helps love grow.",
-    answers: [
-      {
-        text: "patience, even on difficult days.",
-        message: "good things deserve time and patience. ♡"
-      },
-      {
-        text: "honesty and gentle conversations.",
-        message: "honesty gives us a chance to understand one another. 🍓"
-      },
-      {
-        text: "little acts of love, every day.",
-        message: "sometimes a little thing says a whole lot. 🍃"
-      }
-    ]
-  },
-  {
-    title: "what would you keep in our memory box?",
-    description: "imagine a tiny box filled with our favorite things.",
-    answers: [
-      {
-        text: "our funniest memories.",
-        message: "i hope we keep finding reasons to laugh together. ♡"
-      },
-      {
-        text: "the words we needed to hear.",
-        message: "kind words can become memories we carry for a long time. 🍓"
-      },
-      {
-        text: "the ordinary days that became special.",
-        message: "ordinary days can hold the loveliest little surprises. 🍃"
-      }
-    ]
-  },
-  {
-    title: "one last question, my love...",
-    description: "what should always have a place in our little world?",
-    answers: [
-      {
-        text: "room to grow together.",
-        message: "we can keep learning about ourselves and each other. ♡"
-      },
-      {
-        text: "a safe place to be ourselves.",
-        message: "we both deserve a love where we can be ourselves. 🍓"
-      },
-      {
-        text: "more little adventures together.",
-        message: "there are still so many memories we haven't made. 🍃"
-      }
-    ]
-  }
+const questions=[
+{title:"what kind of moment feels special to you?",description:"there's no wrong answer, pretty girl.",answers:[
+{text:"the quiet moments when it's just us.",message:"sometimes the simplest moments mean the most. ♡"},
+{text:"laughing together over the silliest things.",message:"a little laughter can turn an ordinary day into a memory. 🍓"},
+{text:"the moments when we understand each other.",message:"being understood is such a beautiful kind of closeness. 🍃"}]},
+{title:"if our love were a little garden, what would it need?",description:"choose what you think helps love grow.",answers:[
+{text:"patience, even on difficult days.",message:"good things deserve time and patience. ♡"},
+{text:"honesty and gentle conversations.",message:"honesty gives us a chance to understand one another. 🍓"},
+{text:"little acts of love, every day.",message:"sometimes a little thing says a whole lot. 🍃"}]},
+{title:"what would you keep in our memory box?",description:"imagine a tiny box filled with our favorite things.",answers:[
+{text:"our funniest memories.",message:"i hope we keep finding reasons to laugh together. ♡"},
+{text:"the words we needed to hear.",message:"kind words can become memories we carry for a long time. 🍓"},
+{text:"the ordinary days that became special.",message:"ordinary days can hold the loveliest little surprises. 🍃"}]},
+{title:"one last question, my love...",description:"what should always have a place in our little world?",answers:[
+{text:"room to grow together.",message:"we can keep learning about ourselves and each other. ♡"},
+{text:"a safe place to be ourselves.",message:"we both deserve a love where we can be ourselves. 🍓"},
+{text:"more little adventures together.",message:"there are still so many memories we haven't made. 🍃"}]}
 ];
-
-let currentQuestion = 0;
-let selectedAnswers = [];
-let berryCount = 0;
-
-function showPage(id) {
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
-
-  document.getElementById(id).classList.add("active");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+let currentQuestion=0,selectedAnswers=[],berryCount=0;
+function showPage(id){
+document.querySelectorAll(".page").forEach(page=>page.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+window.scrollTo({top:0,behavior:"smooth"});
 }
-
-function goHome() {
-  showPage("home");
+function startGame(){currentQuestion=0;selectedAnswers=[];berryCount=0;renderQuestion();showPage("game")}
+function renderQuestion(){
+const q=questions[currentQuestion];
+document.getElementById("questionCount").textContent="question "+(currentQuestion+1)+" of "+questions.length;
+document.getElementById("berryCount").textContent=berryCount;
+document.getElementById("progressFill").style.width=(currentQuestion/questions.length*100)+"%";
+document.getElementById("questionTitle").textContent=q.title;
+document.getElementById("questionDescription").textContent=q.description;
+document.getElementById("feedback").textContent="";
+const box=document.getElementById("answers");box.innerHTML="";
+document.getElementById("nextQuestion").disabled=true;
+q.answers.forEach((answer,index)=>{
+const button=document.createElement("button");button.className="answer";button.textContent=answer.text;
+button.addEventListener("click",()=>chooseAnswer(index));box.appendChild(button);
+});
+document.getElementById("nextQuestion").textContent=currentQuestion===questions.length-1?"unlock your secret ending ♡":"next little question →";
 }
-
-function startGame() {
-  currentQuestion = 0;
-  selectedAnswers = [];
-  berryCount = 0;
-  renderQuestion();
-  showPage("game");
+function chooseAnswer(index){
+selectedAnswers[currentQuestion]=index;
+document.querySelectorAll("#answers .answer").forEach((button,i)=>{
+button.style.borderColor=i===index?"#b83245":"#d8cbb3";
+button.style.background=i===index?"#fbe5e0":"#fffdf5";
+button.setAttribute("aria-pressed",String(i===index));
+});
+document.getElementById("feedback").textContent=questions[currentQuestion].answers[index].message;
+document.getElementById("nextQuestion").disabled=false;
 }
-
-function renderQuestion() {
-  const question = questions[currentQuestion];
-
-  document.getElementById("questionCount").textContent =
-    "question " + (currentQuestion + 1) + " of " + questions.length;
-
-  document.getElementById("berryCount").textContent = berryCount;
-
-  document.getElementById("progressFill").style.width =
-    (currentQuestion / questions.length * 100) + "%";
-
-  document.getElementById("questionTitle").textContent = question.title;
-  document.getElementById("questionDescription").textContent =
-    question.description;
-
-  document.getElementById("feedback").textContent = "";
-
-  const answerBox = document.getElementById("answers");
-  answerBox.innerHTML = "";
-
-  document.getElementById("nextQuestion").disabled = true;
-
-  question.answers.forEach((answer, index) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.textContent = answer.text;
-
-    button.addEventListener("click", () => chooseAnswer(index));
-
-    answerBox.appendChild(button);
-  });
-
-  document.getElementById("nextQuestion").textContent =
-    currentQuestion === questions.length - 1
-      ? "unlock your secret ending ♡"
-      : "next little question →";
+function nextStep(){
+if(selectedAnswers[currentQuestion]===undefined)return;
+berryCount=currentQuestion+1;
+if(currentQuestion<questions.length-1){currentQuestion++;renderQuestion();return}
+document.getElementById("progressFill").style.width="100%";showSecretEnding();
 }
-
-function chooseAnswer(index) {
-  selectedAnswers[currentQuestion] = index;
-
-  document.querySelectorAll("#answers .answer").forEach((button, i) => {
-    button.style.borderColor = i === index ? "#b83245" : "#d8cbb3";
-    button.style.background = i === index ? "#fbe5e0" : "#fffdf5";
-    button.setAttribute("aria-pressed", String(i === index));
-  });
-
-  document.getElementById("feedback").textContent =
-    questions[currentQuestion].answers[index].message;
-
-  document.getElementById("nextQuestion").disabled = false;
+function showSecretEnding(){
+const messages=selectedAnswers.map((a,i)=>questions[i].answers[a].message);
+document.getElementById("secretMessage").textContent="you made it through all four little questions, mahal. ♡\n\nthere wasn't a perfect answer to any of them. i just wanted to make a little moment for you, where you could pause and find something made with care.\n\n"+messages[0]+"\n\nand here's the secret i saved for last: you are the person this little world was made for. every page is an invitation to know me a little better, one small piece of my heart at a time. 🍓";
+showPage("secret");
 }
-
-function nextStep() {
-  if (selectedAnswers[currentQuestion] === undefined) return;
-
-  berryCount = currentQuestion + 1;
-
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion++;
-    renderQuestion();
-    return;
-  }
-
-  document.getElementById("progressFill").style.width = "100%";
-  showSecretEnding();
-}
-
-function showSecretEnding() {
-  const messages = selectedAnswers.map((answerIndex, questionIndex) => {
-    return questions[questionIndex].answers[answerIndex].message;
-  });
-
-  document.getElementById("secretMessage").textContent =
-    "you made it through all four little questions, aivy. ♡\n\n" +
-    "there wasn't a perfect answer to any of them. " +
-    "i just wanted to make a little moment for you, " +
-    "where you could pause and find something made with care.\n\n" +
-    messages[0] + "\n\n" +
-    "and here's the secret i saved for last: " +
-    "you are the person this little world was made for. " +
-    "every page is an invitation to know me a little better, " +
-    "one small piece of my heart at a time. 🍓";
-
-  showPage("secret");
-}
-
 </script>
 </body>
-  </html>
-  
+</html>
