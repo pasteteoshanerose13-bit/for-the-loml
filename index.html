@@ -507,4 +507,32 @@ function flipMemoryCard(index) {
       document.getElementById("memoryStatus").textContent =
         "you found every pair! 🍓";
       document.getElementById("memoryMessage").textContent =
-        "six little pairs, and so many more memories i hope
+                "six little pairs, and so many more memories i hope we get to make together. ♡";
+
+      document.getElementById("memoryWin").hidden = false;
+    }
+  } else {
+    memoryLocked = true;
+    document.getElementById("memoryStatus").textContent =
+      "not a match yet, mahal. try again. ♡";
+    document.getElementById("memoryMessage").textContent =
+      "that's okay. not every little thing has to match perfectly for it to be special. 🍓";
+
+    setTimeout(() => {
+      [firstIndex, secondIndex].forEach(cardIndex => {
+        const flippedButton = board.children[cardIndex];
+        flippedButton.classList.remove("flipped");
+        flippedButton.innerHTML =
+          '<span aria-hidden="true">🍓</span>' +
+          '<span class="card-caption">tap to reveal</span>';
+        flippedButton.setAttribute("aria-label", "hidden memory card");
+      });
+
+      flippedCards = [];
+      memoryLocked = false;
+    }, 900);
+  }
+}
+</script>
+</body>
+</html>
